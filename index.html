@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="独立可倾转四旋翼无人机项目展示：项目背景、串级姿态控制、构型切换与控制分配，以及三段实验和项目介绍视频。">
+  <meta name="theme-color" content="#143843">
+  <meta name="robots" content="noindex,nofollow">
+  <title>独立倾转四旋翼 · 降级控制与着陆验证 | 苏世达</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#demo">跳到实验视频</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#top" aria-label="倾转旋翼项目首页">
+      <svg class="brand-symbol" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 9v18M9 18h18" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="8" r="5"/><circle cx="28" cy="18" r="5"/><circle cx="18" cy="28" r="5"/><circle cx="8" cy="18" r="5"/><rect x="15" y="15" width="6" height="6" rx="1" fill="currentColor"/></svg>
+      <span>倾转旋翼研究<small>TILTROTOR PROJECT</small></span>
+    </a>
+    <nav aria-label="页面导航"><a href="#background">项目背景</a><a href="#demo">实验视频</a><a href="#framework">控制框架</a></nav>
+    <a class="header-link" href="https://dazimirror.github.io/fourleg-demo/" target="_blank" rel="noopener">另一项研究 <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap" aria-labelledby="title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> ROBOTICS / PROJECT 02</p>
+        <h1 id="title">独立倾转四旋翼<span>降级控制与着陆验证</span></h1>
+        <p class="hero-intro">当部分旋翼停止工作，<br>让剩余动力继续参与姿态稳定与降落。</p>
+        <p class="hero-description">以独立倾转机构拓展推力方向调节能力，将姿态反馈、控制分配与构型切换连接起来，探索对桨停转后的双旋翼控制。</p>
+        <div class="hero-actions"><a class="button button-primary" href="#demo" data-video="intro">观看项目介绍 <span aria-hidden="true">↗</span></a><a class="button button-text" href="#framework">查看控制框架 <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-tags"><span>独立倾转机构</span><span>串级姿态控制</span><span>实物实验</span></div>
+      </div>
+      <figure class="hero-visual">
+        <div class="photo-label"><span class="status-dot" aria-hidden="true"></span> EXPERIMENTAL PROTOTYPE</div>
+        <img src="media/hero.jpg" alt="独立倾转四旋翼无人机实验样机" width="960" height="720" fetchpriority="high">
+        <figcaption><span>样机实物</span><span>台架测试记录</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="background wrap section" id="background" aria-labelledby="background-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / BACKGROUND</p><h2 id="background-title">把旋翼停转，转化为控制重构问题。</h2></div><span class="section-kicker">结构与控制协同设计</span></div>
+      <div class="background-grid">
+        <p class="background-lead">固定桨轴的常规四旋翼依赖各电机之间的推力差维持姿态。旋翼停转后，原有的<strong>推力与力矩平衡</strong>被打破，正常构型的控制分配不再适用。</p>
+        <div class="background-detail">
+          <article><span class="topic-number">01</span><div><h3>让推力方向也成为控制量</h3><p>在旋翼与机臂之间加入独立倾转机构，电机调节推力大小，舵机调节推力方向，使剩余旋翼能够参与新的力矩分配。</p></div></article>
+          <article><span class="topic-number">02</span><div><h3>围绕确定的降级构型验证</h3><p>通过遥控触发继电器切断一对相对旋翼，切换有效执行器集合，使用剩余一对旋翼的转速与倾角协同完成降级控制验证。</p></div></article>
+        </div>
+      </div>
+      <div class="project-strip"><span>项目工作</span><p>倾转机构设计与装配 <i>／</i> 动力学建模与控制仿真 <i>／</i> 飞控集成与实物调试</p></div>
+    </section>
+
+    <section class="demonstrations section" id="demo" aria-labelledby="demo-title">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow">02 / EXPERIMENTS</p><h2 id="demo-title">从样机到实验现场。</h2></div><span class="video-count">3 段实验 <span>＋</span> 1 段项目介绍</span></div>
+        <p class="section-intro">选择视频，查看试验过程与项目介绍。支持声音、全屏与手机观看。</p>
+        <div class="viewer-grid">
+          <div class="viewer-main">
+            <div class="video-shell"><video id="player" controls playsinline preload="metadata" poster="media/test-01.jpg" aria-label="倾转旋翼无人机实验视频"><source src="media/test-01.mp4" type="video/mp4">你的浏览器不支持内嵌视频，请使用下方的“单独打开视频”。</video></div>
+            <p id="video-error" class="video-error" role="alert" hidden>视频暂时无法加载，请检查网络或单独打开视频。</p>
+            <div class="video-caption"><div><p class="eyebrow" id="video-type">EXPERIMENT / 01</p><h3 id="video-title">室内台架测试</h3></div><a id="video-link" href="media/test-01.mp4" target="_blank" rel="noopener">单独打开视频 <span aria-hidden="true">↗</span></a></div>
+            <p id="video-description" class="video-description">在导轨与支架约束下开展样机测试，近距离观察倾转机构、旋翼运行与机体响应。</p>
+            <div class="watch-focus"><span>观察重点</span><p id="video-focus">关注旋翼与倾转机构的动作，以及约束条件下的机体响应。</p></div>
+          </div>
+          <aside class="playlist-panel" aria-label="视频列表"><div class="playlist-heading"><h3>实验档案</h3><span>04 RECORDS</span></div><div id="playlist"></div><p class="playlist-note">点击切换视频，播放由你控制。<br>实验记录保留原始画面与音轨。</p></aside>
+        </div>
+        <p class="media-note">视频用于展示样机与试验过程；具体旋翼状态和降级效果需结合实验条件、控制日志共同判断。</p>
+        <noscript><p>启用 JavaScript 可切换全部视频。仍可直接观看当前实验录像。</p></noscript>
+      </div>
+    </section>
+
+    <section class="framework wrap section" id="framework" aria-labelledby="framework-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / CONTROL ARCHITECTURE</p><h2 id="framework-title">姿态闭环决定需求，控制分配驱动执行器。</h2></div></div>
+      <p class="section-intro">姿态角外环与角速度内环构成串级控制，内环通过 PID 产生力矩需求。单飞控基于 PX4 二次开发，通过 QGroundControl 配置与监测。</p>
+      <div class="control-diagram" role="img" aria-label="姿态目标进入姿态角外环，生成期望角速度；角速度内环生成期望力矩，与总推力需求一起进入控制分配，输出电机及倾转舵机指令。状态估计反馈到姿态角与角速度控制环。">
+        <div class="diagram-topline"><span>CONTROL LOOP</span><span class="thrust-input">总推力需求 <span aria-hidden="true">↓</span></span></div>
+        <div class="flow-nodes">
+          <div class="flow-node"><span class="node-no">01</span><h3>姿态目标</h3><p>遥控 / 上层指令</p><small>期望姿态</small></div>
+          <div class="flow-node"><span class="node-no">02</span><h3>姿态角外环</h3><p>根据姿态误差调节</p><small>期望角速度</small></div>
+          <div class="flow-node"><span class="node-no">03</span><h3>角速度内环</h3><p>快速抑制转动偏差</p><small>期望力矩</small></div>
+          <div class="flow-node highlighted"><span class="node-no">04</span><h3>控制分配</h3><p>按有效构型解算</p><small>转速 / 倾转指令</small></div>
+          <div class="flow-node"><span class="node-no">05</span><h3>电机与舵机</h3><p>改变推力大小与方向</p><small>机体运动响应</small></div>
+        </div>
+        <div class="feedback-line"><span>IMU / 状态估计</span><p>姿态角、角速度反馈</p></div>
+      </div>
+      <div class="allocation-explainer"><h3>转速和倾角，为什么要协同？</h3><p>转速主要改变旋翼推力的大小，倾转角改变推力的方向。控制分配结合旋翼相对质心的位置、倾转方向和反扭矩，将期望合力与力矩转换为执行器指令；旋翼停转后，分配依据也随之变化。</p></div>
+      <details class="equation-details"><summary>查看控制分配的基本关系 <span aria-hidden="true">＋</span></summary><div><p class="equation">F<sub>i</sub> = T<sub>i</sub> · d<sub>i</sub>(α<sub>i</sub>) <span>　</span> τ<sub>i</sub> = r<sub>i</sub> × F<sub>i</sub> + τ<sub>reaction,i</sub></p><p>T 为推力大小，d(α) 为倾转后的推力方向，r 为旋翼相对质心的位置。对有效旋翼的力与力矩分别求和，并结合推力、倾角及执行器变化率的限制进行分配。</p></div></details>
+    </section>
+
+    <section class="mode-section wrap section" aria-labelledby="mode-heading">
+      <div class="section-heading"><div><p class="eyebrow">04 / RECONFIGURATION</p><h2 id="mode-heading">构型变了，执行器的分工也要改变。</h2></div></div>
+      <div class="mode-layout">
+        <div class="airframe-panel">
+          <div class="mode-buttons" role="group" aria-label="选择构型示意"><button type="button" data-mode="normal" aria-pressed="true">四旋翼构型</button><button type="button" data-mode="degraded" aria-pressed="false">双旋翼降级</button></div>
+          <svg id="airframe" data-mode="normal" viewBox="0 0 380 320" role="img" aria-label="四个旋翼的俯视构型，切换降级模式可查看有效执行器变化">
+            <defs><pattern id="diagram-grid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#c9d7d8"/></pattern></defs>
+            <rect x="15" y="15" width="350" height="290" fill="url(#diagram-grid)" opacity=".7"/>
+            <circle cx="190" cy="160" r="111" fill="none" stroke="#d7e3e3" stroke-dasharray="3 5"/>
+            <path d="M190 64V256M84 160H296" stroke="#7d969c" stroke-width="13" stroke-linecap="round"/>
+            <path d="M190 64V256M84 160H296" stroke="#b5c7cb" stroke-width="5" stroke-linecap="round"/>
+            <rect x="164" y="134" width="52" height="52" rx="12" fill="#173b45"/>
+            <path d="m181 163 9-13 9 13" fill="none" stroke="#d6f2e9" stroke-width="2"/>
+            <text x="190" y="181" text-anchor="middle" font-size="8" fill="#c2d7dc">FC</text>
+            <g id="rotor-1" class="rotor"><circle cx="190" cy="57" r="37"/><ellipse cx="190" cy="57" rx="27" ry="7" transform="rotate(-30 190 57)"/><circle class="hub" cx="190" cy="57" r="4"/><text x="190" y="109">R1</text><path class="off-cross" d="m175 42 30 30m0-30-30 30"/></g>
+            <g id="rotor-2" class="rotor"><circle cx="295" cy="160" r="37"/><ellipse cx="295" cy="160" rx="27" ry="7" transform="rotate(30 295 160)"/><circle class="hub" cx="295" cy="160" r="4"/><text x="295" y="212">R2</text></g>
+            <g id="rotor-3" class="rotor"><circle cx="190" cy="263" r="37"/><ellipse cx="190" cy="263" rx="27" ry="7" transform="rotate(-30 190 263)"/><circle class="hub" cx="190" cy="263" r="4"/><text x="245" y="269">R3</text><path class="off-cross" d="m175 248 30 30m0-30-30 30"/></g>
+            <g id="rotor-4" class="rotor"><circle cx="85" cy="160" r="37"/><ellipse cx="85" cy="160" rx="27" ry="7" transform="rotate(30 85 160)"/><circle class="hub" cx="85" cy="160" r="4"/><text x="85" y="212">R4</text></g>
+          </svg>
+          <div class="diagram-legend"><span><i class="legend-active"></i>有效旋翼</span><span><i class="legend-off"></i>停止工作</span></div>
+          <p class="diagram-caption">构型示意，编号仅用于说明，不表示实机编号或桨叶旋向。</p>
+        </div>
+        <div class="mode-copy" aria-live="polite">
+          <p class="eyebrow">ACTUATOR CONFIGURATION</p><h3 id="mode-title">四旋翼协同工作</h3><p id="mode-description">四个旋翼参与控制，依据正常构型将总推力与力矩需求分配给各电机及倾转机构。</p>
+          <div class="actuator-state"><span>有效执行器</span><strong id="mode-actuators">4 个电机 · 4 个倾转舵机</strong></div>
+          <div class="mode-principle"><span>闭环与分配各有职责</span><p>姿态控制持续产生修正需求；构型切换改变可用执行器及其效能。降级后需要同时关注推力余量、控制参数和输出约束。</p></div>
+        </div>
+      </div>
+      <ol class="transition-steps" aria-label="降级控制过程"><li><span>01</span><h3>遥控触发</h3><p>通过辅助通道发出试验切换指令。</p></li><li><span>02</span><h3>对桨断电</h3><p>继电器开关切断指定一对旋翼的动力。</p></li><li><span>03</span><h3>分配重构</h3><p>失效通道退出，剩余电机与倾转机构协同。</p></li><li><span>04</span><h3>降级降落</h3><p>持续进行姿态反馈与输出调节，观察下降过程。</p></li></ol>
+      <div class="transition-note"><span>切换瞬态</span><p>断电、转速变化与舵机运动存在响应延迟。控制逻辑需要协调切换事件与分配状态，并考虑执行器限幅、变化率限制及积分饱和对姿态恢复的影响。</p></div>
+    </section>
+
+    <section class="scope wrap" aria-labelledby="scope-title"><div><p class="eyebrow">EXPERIMENT SCOPE</p><h2 id="scope-title">围绕对桨停转，验证降级控制。</h2></div><p>本页展示独立倾转样机及指定构型的实验记录。试验采用遥控主动触发断电，重点观察剩余旋翼的控制与降落表现；自动故障检测不属于本次演示内容。</p></section>
+  </main>
+  <footer class="wrap"><div><strong>苏世达 · 项目展示</strong><span>独立倾转四旋翼无人机</span></div><div class="footer-links"><a href="https://github.com/dazimirror/tiltrotor-demo" target="_blank" rel="noopener">GitHub ↗</a><a href="https://dazimirror.github.io/fourleg-demo/" target="_blank" rel="noopener">四腿式起落装置 ↗</a><a href="#top">回到顶部 ↑</a></div></footer>
+</body>
+</html>
